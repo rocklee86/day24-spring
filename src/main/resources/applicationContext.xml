@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 1. 通过ioc容器来创建对象 -->
+    <!--
+       id : 表示这个对象的引用名称
+       class : 要创建对象的类型：包名.类名
+     -->
+    <bean id="c1" class="cn.qphone.spring.Chinese" />
+    <bean id="c2" class="cn.qphone.spring.American" />
+</beans>
