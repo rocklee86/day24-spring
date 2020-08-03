@@ -15,9 +15,16 @@ public class Demo1_IOC {
                 new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
         //2. 通过控制反转来创建对象
         Person p = (Person) applicationContext.getBean("c1");
-        Person sb = (Person) applicationContext.getBean("c2");
+        Person p2 = (Person) applicationContext.getBean("c2");
+
         //3. 调用
         p.showinfo();
-        sb.showinfo();
+        p2.showinfo();
+
+        Person p3 = (Person) applicationContext.getBean("c3");
+        p3.showinfo();
+
+        Person p4 = (Person) applicationContext.getBean("c4");
+        p4.showinfo();
     }
 }

@@ -9,6 +9,23 @@
        id : 表示这个对象的引用名称
        class : 要创建对象的类型：包名.类名
      -->
-    <bean id="c1" class="cn.qphone.spring.Chinese" />
-    <bean id="c2" class="cn.qphone.spring.American" />
+    <!--<bean id="c1" class="cn.qphone.spring.Chinese" />--><!-- 默认使用的无参构造创建对象 -->
+    <bean id="c1" class="cn.qphone.spring.Chinese">
+        <constructor-arg name="name" value="程志远"/>
+        <constructor-arg name="age" value="32"/>
+        <constructor-arg name="feature" value="帅"/>
+    </bean>
+
+    <bean id="c2" class="cn.qphone.spring.Chinese">
+        <property name="name" value="李洪良" />
+        <property name="age" value="38" />
+        <property name="feature" value="高富帅" />
+    </bean>
+
+    <!--2. 使用对象工厂方式创建chinese-->
+    <bean id="factory" class="cn.qphone.spring.BeanFactory" />
+    <bean id="c3" factory-bean="factory" factory-method="createChinese" />
+
+    <!--3. 静态工厂创建chinese-->
+    <bean id="c4" class="cn.qphone.spring.BeanFactory" factory-method="createChina" />
 </beans>
